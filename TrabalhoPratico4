@@ -1,0 +1,172 @@
+
+package trabalhopratico4;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class TrabalhoPratico4 {
+
+    private static Clientes Clientes;
+
+    public static void main(String[] args) {
+           int num = 0;
+           
+            Scanner in = new Scanner(System.in); //"Pegando" os dados do teclado
+            //Criando a lista de clientes. Como serão criados vários clientes, então foi usado um Arraylist.
+            ArrayList<Clientes> ListaClientes = new ArrayList();
+           
+            //Professor, aqui criei 5 clientes na mão mesmo para ficar didatico
+            Clientes Cliente1 = new Clientes(1, "João", "joao@uol.com.br", 996587412, "023.659.874-56");
+            Clientes Cliente2 = new Clientes(2, "Felipe", "felipe.andrade@prof.unibh.br", 99568412, "025.478.963-25");
+            Clientes Cliente3 = new Clientes(3, "Carlos", "carlinhos@bol.com.br", 123456, "258.999.987-74");
+            Clientes Cliente4 = new Clientes(4, "Mario", "mariodoarmario@gmail.com", 123456, "258.999.974-12");
+            Clientes Cliente5 = new Clientes(5, "Thiago", "thiago123@hotmail.com", 123456, "258.999.954-74");
+           
+            ListaClientes.add(Cliente1);
+            ListaClientes.add(Cliente2);
+            ListaClientes.add(Cliente3);
+            ListaClientes.add(Cliente4);
+            ListaClientes.add(Cliente5);
+          
+           
+           
+           ArrayList<Produtos> ListaProdutos = new ArrayList();
+           
+           Produtos Produto1 = new Produtos (1, "Calça", 25, "Preta", "Nike");
+           Produtos Produto2 = new Produtos (2, "Meia", (float) 3.50, "Branca", "Adidas");
+           
+            ListaProdutos.add(Produto1);
+            ListaProdutos.add(Produto2);
+           
+           do{
+           System.out.println("Bem vindo à loja Trabalho_Prático 04");
+           System.out.println("");
+           System.out.println("-------------------- MENU ---------------------");
+           System.out.println("");
+           System.out.println("***********************************************");
+           System.out.println("*                                             *");
+           System.out.println("*  Digite [1] para cadastrar um cliente:      *");
+           System.out.println("*  Digite [2] para cadastrar um produto:      *");
+           System.out.println("*  Digite [3] para procurar um cliente:       *");
+           System.out.println("*  Digite [4] para procurar um produto:       *");
+           System.out.println("*  Digite [5] para ver todos os clientes:     *");
+           System.out.println("*  Digite [6] para ver todos os produtos:     *");
+           System.out.println("*  Digite [7] para entrar no modo de compras: *");
+           System.out.println("*  Digite [8] para sair da loja.              *");
+           System.out.println("*                                             *");
+           System.out.println("***********************************************");
+           
+            
+            num = in.nextInt();
+            switch(num){
+                case 1:
+                    //Aqui vai ser cadastrado um novo cliente
+                    int ID = 0;
+                    String nome;
+                    String email;
+                    int celular;
+                    String CPF;   
+                    System.out.println("Digite o ID do usuário: ");
+                    ID = in.nextInt();
+                    in.nextLine();
+                    System.out.println("Digite o nome do cliente: ");
+                    nome = in.nextLine();
+                    System.out.println("Digite o e-mail do cliente: ");
+                    email = in.nextLine();
+                    System.out.println("Digite o número de celular do usuário: ");
+                    celular = in.nextInt();
+                    in.nextLine();
+                    System.out.println("Digite o número de CPF do cliente: ");
+                    CPF = in.nextLine();
+                    Clientes  = new Clientes(ID, nome, email, celular, CPF);  
+                    ListaClientes.add(Clientes); 
+                    System.out.println("");
+                    System.out.println("Cadastro realizado com sucesso!");
+                    System.out.println("");
+                break;
+                case 2:
+                    int ID1 =0;
+                    String nome1;
+                    float preco1;
+                    String cor1;
+                    String marca1;  
+                    System.out.println("Digite o ID do produto: ");
+                    ID1 = in.nextInt();
+                    in.nextLine();
+                    System.out.println("Digite o nome do produto: ");
+                    nome1 = in.nextLine();
+                    System.out.println("Digite o preço do produto: ");
+                    preco1 = in.nextFloat();
+                     in.nextLine();
+                    System.out.println("Digite a cor do produto: ");
+                    cor1 = in.nextLine();
+                    System.out.println("Digite a marca do produto: ");
+                    marca1 = in.nextLine();
+                    Produtos p = new Produtos(ID1, nome1, preco1, cor1, marca1);  
+                    ListaProdutos.add(p); 
+                    System.out.println("");
+                    System.out.println("Cadastro realizado com sucesso!");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("Cadastro realizado com sucesso!");
+                    System.out.println("");
+                break;
+                case 3:
+                   // buscarCliente();
+                    System.out.println("Qual o ID do cliente que deseja buscar?");
+                    int pesquisa = in.nextInt();
+                    ID = ListaClientes.indexOf(pesquisa--) ;
+                    System.out.println("ID: "+ListaClientes.get(pesquisa).getID()+" Nome: "+ListaClientes.get(pesquisa).getNome()
+                    +" E-mail: "+ListaClientes.get(pesquisa).getEmail()+" Celular: "+ListaClientes.get(pesquisa).getCelular()+" CPF: "+ListaClientes.get(pesquisa).getCPF());
+                break;
+                case 4:
+                    System.out.println("Qual o ID do produto que deseja buscar?");
+                    int pesquisa2 = in.nextInt();
+                    ID = ListaClientes.indexOf(pesquisa2--) ;
+                    System.out.println("ID: "+ListaProdutos.get(pesquisa2).getID1()+"   Nome: "+ListaProdutos.get(pesquisa2).getNome1()
+                    +"   Preço: "+ListaProdutos.get(pesquisa2).getPreco1()+"   Cor: "+ListaProdutos.get(pesquisa2).getCor1()+"   Marca: "+ListaProdutos.get(pesquisa2).getMarca1());
+                break;
+                case 5:
+                    for (int i=0; i<ListaClientes.size();i++){
+                    System.out.println("ID: "+ListaClientes.get(i).getID()+"   Nome: "+ListaClientes.get(i).getNome()
+                    +"   E-mail: "+ListaClientes.get(i).getEmail()+"   Celular: "+ListaClientes.get(i).getCelular()+"   CPF: "+ListaClientes.get(i).getCPF());
+                    }
+                    System.out.println("");
+                break;
+                case 6:
+                    for (int i=0; i<ListaProdutos.size();i++){
+                    System.out.println("ID: "+ListaProdutos.get(i).getID1()+"   Nome: "+ListaProdutos.get(i).getNome1()
+                    +"   Preço: "+ListaProdutos.get(i).getPreco1()+"   Cor: "+ListaProdutos.get(i).getCor1()+"   Marca: "+ListaProdutos.get(i).getMarca1());
+                    }
+                    System.out.println("");
+                    break;
+                case 7:
+                    System.out.println("Digite o ID do produto que deseja comprar:");
+                    int item = in.nextInt();
+                    for(int i=0; item<10;i++){
+                        //if(){
+                            System.out.println("Deseja comprar mais algum produto? [s/n]");
+                            
+                        //}
+                        
+                    }
+                break;    
+                case 8:
+                    System.out.println("Muito obrigado! Volte Sempre!");
+                    System.exit(0);
+                default:
+                    System.out.println("Opção incorreta!");
+            }
+            }
+            while(num !=7);
+                
+                           
+    
+    }                               
+                    
+    
+      
+        } 
+   
+
