@@ -12,7 +12,7 @@ public class TrabalhoPratico4 {
     public static void main(String[] args) {
            int num = 0;
            
-            Scanner in = new Scanner(System.in); //"Pegando" os dados do teclado
+            Scanner in = new Scanner(System.in); //Lendo os dados do teclado
             //Criando a lista de clientes. Como serão criados vários clientes, então foi usado um Arraylist.
             ArrayList<Clientes> ListaClientes = new ArrayList();
            
