@@ -146,7 +146,7 @@ public class TrabalhoPratico4 {
                     int item = in.nextInt();
                     System.out.println("Deseja comprar mais algum produto? [s/n]");
                     String cons = in.next();
-                    if(cons =="n"){                                
+                    if("n".equals(cons)){                                
                                 System.out.println("Carrinho fechado!");
                             }
                 break;    
