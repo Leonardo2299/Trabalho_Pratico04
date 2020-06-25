@@ -149,6 +149,21 @@ public class TrabalhoPratico4 {
                     if("n".equals(cons)){                                
                                 System.out.println("Carrinho fechado!");
                             }
+                             /*  if("s".equals(cons)){
+                    for(String i="s"; !"n".equals(i);i++){    
+                    //for(int i=0; "s"!=(cons);i++){
+                        System.out.println("Digite o ID do produto que deseja comprar:");
+                        int item2 = in.nextInt();
+                        System.out.println("Deseja comprar mais algum produto? [s/n]");
+                        String cons2 = in.next();
+                        if("n".equals(cons)){                                
+                                System.out.println("Carrinho fechado!");
+                        
+                    }
+                    
+                }
+                    }
+                    */
                 break;    
                 case 8:
                     System.out.println("Muito obrigado! Volte Sempre!");
