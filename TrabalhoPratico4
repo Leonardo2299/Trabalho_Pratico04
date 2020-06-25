@@ -144,13 +144,11 @@ public class TrabalhoPratico4 {
                 case 7:
                     System.out.println("Digite o ID do produto que deseja comprar:");
                     int item = in.nextInt();
-                    for(int i=0; item<10;i++){
-                        //if(){
-                            System.out.println("Deseja comprar mais algum produto? [s/n]");
-                            
-                        //}
-                        
-                    }
+                    System.out.println("Deseja comprar mais algum produto? [s/n]");
+                    String cons = in.next();
+                    if(cons =="n"){                                
+                                System.out.println("Carrinho fechado!");
+                            }
                 break;    
                 case 8:
                     System.out.println("Muito obrigado! Volte Sempre!");
